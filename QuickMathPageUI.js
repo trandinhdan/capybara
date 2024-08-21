@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 generateProblem();  // Generate a new problem
             }, 10000);  // 5 seconds
         } else {
-            feedbackElement.textContent = `Oops! The correct answer was ${correctAnswer}.`;
+            feedbackElement.textContent = `Oops! The answer was incorrect.`;
             console.log('Incorrect answer. Feedback:', feedbackElement.textContent);
         }
     });

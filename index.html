@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Math for Kids</title>
+    <title>Capybara</title>
     <link rel="stylesheet" href="QuickMathPageUI.css">
 </head>
 <body>
     <div class="container">
-        <h2>Quick Math for Kids</h2>
-        <div class="problem" id="problem"></div>
+        <h2>Cá Pì Bá Ra</h2>
+        
         <form class="form" id="mathForm">
+            <div class="problem" id="problem"></div>
             <div class="input-container">
                 <label class="label" for="answer">Your Answer:</label>
                 <input class="input" type="number" id="answer" name="answer" required>
             </div>
+            <div class="feedback" id="feedback"></div>
             <div class="button-container">
                 <button class="button" type="submit">Check Answer</button>
             </div>
+
         </form>
-        <div class="feedback" id="feedback"></div>
+        
         <audio id="audio">
             <source src="sound/capybara.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
