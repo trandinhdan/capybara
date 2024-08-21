@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         problemElement.textContent = `${num1} ${operator} ${num2} = ?`;
         answerInput.value = '';
         feedbackElement.textContent = '';
-        gifContainer.style.display = 'none';
+        gifContainer.style.display = 'none';  // Hide GIFs initially
+        console.log('New problem generated:', problemElement.textContent);
     };
 
     form.addEventListener('submit', (e) => {
@@ -31,18 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (parseInt(answerInput.value) === correctAnswer) {
             feedbackElement.textContent = 'Correct! Well done!';
-            audio.play();
-            gifContainer.style.display = 'flex';
+            console.log('Correct answer. Playing sound and showing GIFs.');
+            audio.play();  // Play the audio
+            gifContainer.style.display = 'flex';  // Show the GIFs
 
+            // After 5 seconds, hide the GIFs, stop the audio, and generate a new problem
             setTimeout(() => {
+                console.log('5 seconds passed. Stopping sound and generating new problem.');
                 audio.pause();
                 audio.currentTime = 0;
-                generateProblem();
-            }, 10000); // 10 seconds
+                generateProblem();  // Generate a new problem
+            }, 5000);  // 5 seconds
         } else {
             feedbackElement.textContent = `Oops! The correct answer was ${correctAnswer}.`;
+            console.log('Incorrect answer. Feedback:', feedbackElement.textContent);
         }
     });
 
-    generateProblem();
+    generateProblem();  // Initial problem generation
 });
