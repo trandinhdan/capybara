@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 audio.pause();
                 audio.currentTime = 0;
                 generateProblem();  // Generate a new problem
-            }, 5000);  // 5 seconds
+            }, 10000);  // 5 seconds
         } else {
             feedbackElement.textContent = `Oops! The correct answer was ${correctAnswer}.`;
             console.log('Incorrect answer. Feedback:', feedbackElement.textContent);
